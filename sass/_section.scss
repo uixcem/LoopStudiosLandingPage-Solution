@@ -1,0 +1,252 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+section {
+  width: 100%;
+  padding: 0 5rem;
+  @include mobile {
+    padding: 0 2rem;
+  }
+}
+.one {
+  @include mobile {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    height: 100%;
+  }
+  margin-top: 10rem;
+  height: 50rem;
+  position: relative;
+  &__image {
+    width: 60%;
+    position: absolute;
+    z-index: -1;
+    @include mobile {
+      width: 100%;
+      position: static;
+    }
+
+    img {
+      object-fit: contain;
+      width: 100%;
+    }
+  }
+
+  &__text {
+    @include flex(column, center, center, 0);
+    position: absolute;
+    background-color: $color-white;
+    width: 40%;
+    z-index: 2;
+    padding: 5rem;
+    right: 7rem;
+    top: 18rem;
+    @include mobile {
+      position: static;
+      width: 100%;
+      padding: 0rem;
+      margin-top: 3rem;
+    }
+
+    h1,
+    p {
+      width: 100%;
+      @include mobile {
+        text-align: center;
+      }
+    }
+
+    h1 {
+      @include typography(
+        2.5rem,
+        $font-family: Josefin Sans,
+        $weight: 300,
+        $color: $color-black
+      );
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      @include mobile {
+        font-size: 2.3rem;
+      }
+    }
+
+    p {
+      @include typography(
+        0.9rem,
+        $font-family: Alata,
+        $weight: 400,
+        $color: $color-dark-gray
+      );
+      line-height: 1.8rem;
+      @include mobile {
+        font-size: 1.1rem;
+        width: 90%;
+      }
+    }
+  }
+}
+
+.two {
+  @include mobile {
+    margin-top: 5rem;
+    position: relative;
+  }
+  &__top {
+    @include flex(row, space-between, center, 0);
+    margin-bottom: 5rem;
+    @include mobile {
+      justify-content: center;
+    }
+    p {
+      @include typography(
+        2.5rem,
+        $font-family: Josefin Sans,
+        $weight: 300,
+        $color: $color-black
+      );
+      text-transform: uppercase;
+      @include mobile {
+        font-size: 2.4rem;
+        text-align: center;
+      }
+    }
+
+    &--button {
+      @include mobile {
+        position: absolute;
+        bottom: -5rem;
+        padding: 0.5rem 4rem;
+      }
+      border: 3px solid $color-dark-gray;
+      padding: 0.5rem 3rem;
+      cursor: pointer;
+      &:hover {
+        background-color: $color-black;
+        color: $color-white;
+      }
+      a {
+        @include typography(
+          1rem,
+          $font-family: Alata,
+          $weight: 400,
+          $color: $color-black
+        );
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &:hover {
+          color: $color-white;
+        }
+      }
+    }
+  }
+
+  //top-part ends here
+
+  //top-grid parts starts here
+
+  &__cards {
+    @include mobile {
+      grid-auto-flow: row;
+      grid-template-columns: 2fr;
+      gap: 1rem;
+    }
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2rem;
+
+    .card {
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      @include mobile {
+        &:nth-child(1) img {
+          content: url(../images/mobile/image-deep-earth.jpg);
+        }
+        &:nth-child(2) img {
+          content: url(../images/mobile/image-night-arcade.jpg);
+        }
+        &:nth-child(3) img {
+          content: url(../images/mobile/image-soccer-team.jpg);
+        }
+        &:nth-child(4) img {
+          content: url(../images/mobile/image-grid.jpg);
+        }
+        &:nth-child(5) img {
+          content: url(../images/mobile/image-from-above.jpg);
+        }
+        &:nth-child(6) img {
+          content: url(../images/mobile/image-pocket-borealis.jpg);
+        }
+        &:nth-child(7) img {
+          content: url(../images/mobile/image-curiosity.jpg);
+        }
+        &:nth-child(8) img {
+          content: url(../images/mobile/image-fisheye.jpg);
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb($color-white, 0.7);
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      span {
+        position: absolute;
+        z-index: 2;
+        bottom: 2rem;
+        left: 2rem;
+        text-transform: uppercase;
+        width: 50%;
+        transition: 0.3 ease all;
+        @include mobile {
+          bottom: 1rem;
+          left: 1rem;
+        }
+        @include typography(
+          1.5rem,
+          $font-family: Josefin Sans,
+          $weight: 300,
+          $color: $color-white
+        );
+      }
+
+      span:hover {
+        color: $color-black;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      &:hover {
+        &::after {
+          opacity: 1;
+        }
+        span {
+          color: $color-black;
+        }
+      }
+    }
+  }
+}

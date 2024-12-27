@@ -1,0 +1,27 @@
+@use "variables" as *;
+
+@mixin flex($direction: row, $justify: center, $align: center, $gap: 1rem) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin typography(
+  $size: 1rem,
+  $font-family: Alata,
+  $weight: 400,
+  $color: $color-black
+) {
+  font-size: $size;
+  font-family: $font-family;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin mobile {
+  @media (max-width: 480px) {
+    @content;
+  }
+}

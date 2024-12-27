@@ -1,0 +1,67 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.footer {
+  background-color: $color-black;
+  @include flex(row, space-between, center, 0);
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+  }
+  padding: 3rem 5rem 1rem 5rem;
+  width: 100%;
+  margin-top: 10rem;
+
+  &__links {
+    @include flex(column, start, start, 2rem);
+    color: $color-white;
+    @include mobile {
+      justify-content: center;
+      align-items: center;
+    }
+
+    ul {
+      @include flex(row, center, center, 0);
+      list-style: none;
+      margin-bottom: 2rem;
+      @include mobile {
+        flex-direction: column;
+      }
+
+      li {
+        margin-right: 2rem;
+        @include mobile {
+          margin-right: 0;
+          margin-bottom: 1rem;
+        }
+        cursor: pointer;
+        transition: color 0.3s;
+        @include typography(
+          0.9rem,
+          $font-family: Alata,
+          $weight: 400,
+          $color: $color-white
+        );
+      }
+    }
+  }
+
+  &__social {
+    @include flex(column, center, flex-end, 2rem);
+    @include mobile {
+      align-items: center;
+      margin-top: 1rem;
+    }
+    .tradeMark {
+      @include typography(
+        1rem,
+        $font-family: Josefin Sans,
+        $weight: 300,
+        $color: $color-dark-gray
+      );
+    }
+    ul {
+      @include flex(row, flex-start, center, 1rem);
+    }
+  }
+}

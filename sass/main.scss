@@ -1,0 +1,49 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "section" as *;
+@use "footer" as *;
+@use "header" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  width: min(100%, 1440px);
+  position: relative;
+  margin-inline: auto;
+  @include flex(column, center, center);
+}
+
+.links li {
+  position: relative;
+}
+
+.links li::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 20%;
+  width: 0;
+  height: 2px;
+  background-color: $color-white;
+  transition: width 0.3s;
+}
+
+.links li:hover::after {
+  width: 2rem;
+}

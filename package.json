@@ -1,0 +1,14 @@
+{
+  "name": "loopstudioslandingpage-solution",
+  "version": "1.0.0",
+  "description": "![Design preview for the Loopstudios landing page coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass sass/main.scss:style.css --watch"
+  },
+  "author": "uixcem",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.83.0"
+  }
+}
