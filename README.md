@@ -1,10 +1,8 @@
-İşte frontend projeniz için daha kapsamlı bir README:
-
 # Frontend Mentor - Loopstudios VR Landing Page
 
 A fully responsive VR company landing page with interactive elements, smooth animations, and a mobile-first approach. This project showcases modern web development practices and attention to detail.
 
-[View Live Site](#) | [Solution on Frontend Mentor](#)
+[View Live Site](https://loopstudioslandingpagefrontendmentor.netlify.app/) | [Solution on Github](https://github.com/uixcem/LoopStudiosLandingPage-Solution)
 
 ![Project Preview](./design/desktop-design.jpg)
 
