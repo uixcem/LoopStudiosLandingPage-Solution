@@ -16,7 +16,7 @@ document.querySelector(".icon-hamburger").addEventListener("click", () => {
   document.querySelector(".icon-close").style.display = "block";
   document.querySelector(".mobileMenu").style.backgroundColor = "black";
   document.querySelector(".mobileMenu__links").style.display = "block";
-  document.querySelector(".mobileMenu__links").style.marginTop = "10rem"; // Changed from top to marginTop
+  document.querySelector(".mobileMenu__links").style.marginTop = "10rem";
   document.querySelector(".nav__logo--img").style.display = "block";
 });
 
